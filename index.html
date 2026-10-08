@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Madison Monaghan | Accounting Portfolio</title>
+
+  <meta
+    name="description"
+    content="Personal portfolio of Madison Monaghan, an Accounting & Accounting Information Systems student at Rutgers University."
+  >
+
+  <style>
+    :root {
+      --navy: #12233f;
+      --blue: #2f5d8c;
+      --light-blue: #eaf2f8;
+      --cream: #f7f5f0;
+      --white: #ffffff;
+      --text: #243044;
+      --muted: #667085;
+      --border: #d9e0e8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(18, 35, 63, 0.97);
+      padding: 16px 7%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #bcd7ef;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
+    .hero {
+      min-height: 82vh;
+      padding: 80px 7%;
+
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+
+      background: linear-gradient(
+        135deg,
+        var(--light-blue),
+        var(--cream)
+      );
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--blue);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.15rem;
+      color: #435168;
+    }
+
+    /* =========================
+       HEADSHOT
+    ========================= */
+
+    .headshot-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    /*
+      HEADSHOT:
+      Replace the GitHub URL below with the RAW URL
+      of your headshot.
+
+      Example:
+
+      https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPOSITORY/main/headshot.jpg
+    */
+
+    .headshot {
+      width: 280px;
+      height: 280px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+      border: 8px solid var(--white);
+
+      box-shadow:
+        0 15px 40px rgba(18, 35, 63, 0.18);
+
+      background: #dfe7ef;
+    }
+
+    .placeholder {
+      width: 280px;
+      height: 280px;
+
+      border-radius: 50%;
+
+      background: var(--white);
+
+      border: 3px dashed #9aaabd;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 35px;
+
+      color: var(--muted);
+
+      box-shadow:
+        0 15px 40px rgba(18, 35, 63, 0.10);
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+      padding: 85px 7%;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 750px;
+      margin-bottom: 38px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: var(--white);
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .skill {
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      padding: 24px 16px;
+
+      border-radius: 12px;
+
+      text-align: center;
+
+      font-weight: 700;
+
+      color: var(--navy);
+
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .skill:hover {
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 10px 25px rgba(18, 35, 63, 0.10);
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+      background: var(--light-blue);
+    }
+
+    .project-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 28px;
+    }
+
+    .project {
+      background: var(--white);
+
+      padding: 32px;
+
+      border-radius: 16px;
+
+      border: 1px solid var(--border);
+
+      box-shadow:
+        0 8px 25px rgba(18, 35, 63, 0.06);
+    }
+
+    .project-number {
+      color: var(--blue);
+
+      font-weight: 800;
+
+      font-size: 0.85rem;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+    }
+
+    .project h3 {
+      color: var(--navy);
+
+      margin: 8px 0 5px;
+
+      font-size: 1.35rem;
+    }
+
+    .date {
+      color: var(--muted);
+
+      font-size: 0.9rem;
+
+      margin-bottom: 18px;
+    }
+
+    .project ul {
+      padding-left: 20px;
+    }
+
+    .project li {
+      margin-bottom: 10px;
+    }
+
+    .project a {
+      color: var(--blue);
+
+      font-weight: 700;
+
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      text-align: center;
+
+      background: var(--navy);
+
+      color: var(--white);
+    }
+
+    .contact .section-title {
+      color: var(--white);
+    }
+
+    .contact p {
+      max-width: 650px;
+
+      margin: 0 auto;
+
+      color: #d6deea;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+
+      padding: 22px;
+
+      background: #0c182b;
+
+      color: #b9c4d3;
+
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       MOBILE RESPONSIVE DESIGN
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+      }
+
+      .hero p {
+        margin: auto;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      nav {
+        flex-direction: column;
+
+        gap: 10px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+
+        justify-content: center;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav>
+
+    <div class="logo">
+      Madison Monaghan
+    </div>
+
+    <ul>
+
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#skills">Skills</a>
+      </li>
+
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hero">
+
+    <div>
+
+      <div class="eyebrow">
+        Accounting • Technology • Business
+      </div>
+
+      <h1>
+        Madison<br>
+        Monaghan
+      </h1>
+
+      <p>
+        Sophomore at Rutgers University majoring in
+        Accounting &amp; Accounting Information Systems,
+        with experience applying accounting knowledge,
+        analytical skills, and business insight to
+        real-world projects.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         HEADSHOT
+    ========================= -->
+
+    <div class="headshot-wrap">
+
+      <!--
+        HEADSHOT INSTRUCTIONS:
+
+        1. Upload your professional headshot
+           to your GitHub repository.
+
+        2. Click on the image in GitHub.
+
+        3. Click "Raw."
+
+        4. Copy the URL.
+
+        5. Replace the URL in the "src" below.
+
+        Example:
+
+        https://raw.githubusercontent.com/
+        YOUR-USERNAME/YOUR-REPOSITORY/main/headshot.jpg
+      -->
+
+      <img
+        class="headshot"
+        src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPOSITORY/main/headshot.jpg"
+        alt="Headshot of Madison Monaghan"
+        onerror="
+          this.style.display='none';
+          document.getElementById('headshot-placeholder').style.display='flex';
+        "
+      >
+
+      <div
+        id="headshot-placeholder"
+        class="placeholder"
+        style="display:none;"
+      >
+
+        Upload your professional
+        <br>
+        headshot to GitHub
+        <br>
+        and add the RAW image URL here.
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       ABOUT / PERSONAL STATEMENT
+  ========================= -->
+
+  <section
+    id="about"
+    class="about"
+  >
+
+    <div class="eyebrow">
+      About Me
+    </div>
+
+    <h2 class="section-title">
+      Personal Statement
+    </h2>
+
+    <p class="section-intro">
+
+      My name is Madison Monaghan, and I’m a sophomore
+      majoring in Accounting &amp; Accounting Information
+      Systems at Rutgers University.
+
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       SKILLS
+  ========================= -->
+
+  <section id="skills">
+
+    <div class="eyebrow">
+      What I Bring
+    </div>
+
+    <h2 class="section-title">
+      Skills
+    </h2>
+
+    <p class="section-intro">
+
+      A combination of technical accounting knowledge,
+      Microsoft Office experience, analytical tools,
+      and professional skills.
+
+    </p>
+
+
+    <div class="skills-grid">
+
+      <div class="skill">
+        Microsoft Office
+      </div>
+
+      <div class="skill">
+        Excel
+      </div>
+
+      <div class="skill">
+        PivotTables
+      </div>
+
+      <div class="skill">
+        VLOOKUP
+      </div>
+
+      <div class="skill">
+        GAAP
+      </div>
+
+      <div class="skill">
+        Time Management
+      </div>
+
+      <div class="skill">
+        Customer Service
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJECTS
+  ========================= -->
+
+  <section
+    id="projects"
+    class="projects"
+  >
+
+    <div class="eyebrow">
+      Selected Experience
+    </div>
+
+    <h2 class="section-title">
+      Relevant Project Experience
+    </h2>
+
+    <p class="section-intro">
+
+      Academic and professional-development projects
+      that demonstrate accounting, auditing, analytical,
+      communication, and management skills.
+
+    </p>
+
+
+    <div class="project-grid">
+
+
+      <!-- PROJECT 1 -->
+
+      <article class="project">
+
+        <div class="project-number">
+          Project 01
+        </div>
+
+        <h3>
+          KPMG U.S. Career Catalyst:
+          Audit Job Simulation
+        </h3>
+
+        <div class="date">
+          Forage • September 2026
+        </div>
+
+        <ul>
+
+          <li>
+            Completed a job simulation focused on
+            conducting an audit for a hypothetical client.
+          </li>
+
+          <li>
+            Determined the materiality of general ledger
+            accounts to plan the audit.
+          </li>
+
+          <li>
+            Reviewed the client’s order-to-cash process
+            to understand internal controls and identify
+            potential risks.
+          </li>
+
+        </ul>
+
+
+        <!--
+          CERTIFICATION LINK:
+
+          If you upload your certificate to GitHub,
+          replace "#" below with the public URL.
+        -->
+
+        <p style="margin-top:20px;">
+
+          <a href="#">
+            View certification →
+          </a>
+
+        </p>
+
+      </article>
+
+
+      <!-- PROJECT 2 -->
+
+      <article class="project">
+
+        <div class="project-number">
+          Project 02
+        </div>
+
+        <h3>
+          Management Skills —
+          Barnes &amp; Noble Class Project
+        </h3>
+
+        <div class="date">
+          Rutgers University
+        </div>
+
+        <ul>
+
+          <li>
+            Helped provide management advice to
+            Rutgers’ Barnes &amp; Noble store.
+          </li>
+
+          <li>
+            Met with managers, employees, and customers
+            for interviews.
+          </li>
+
+          <li>
+            Analyzed store and interview information
+            to develop a detailed report for management.
+          </li>
+
+          <li>
+            Provided recommendations intended to
+            improve the store.
+          </li>
+
+        </ul>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section class="contact">
+
+    <h2 class="section-title">
+      Let's Connect
+    </h2>
+
+    <p>
+
+      Thank you for visiting my portfolio.
+      This page highlights my academic background,
+      skills, and relevant project experience as I
+      continue developing my career in accounting
+      and accounting information systems.
+
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    © 2026 Madison Monaghan • Personal Portfolio
+
+  </footer>
+
+
+</body>
+</html>
